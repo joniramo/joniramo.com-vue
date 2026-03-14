@@ -34,8 +34,11 @@ import { PortableText, PortableTextComponents } from "@portabletext/vue";
 import DOMPurify from "dompurify";
 import hljs from "highlight.js";
 import "highlight.js/styles/monokai-sublime.css";
-import { h, ref } from "vue";
+import { computed, h, ref } from "vue";
 import type { Ref } from "vue";
+import { useHead } from "@unhead/vue";
+
+const siteUrl = import.meta.env.VITE_SITE_URL;
 import { useRoute } from "vue-router";
 
 import sanity from "../client";
@@ -112,6 +115,54 @@ function fetchData() {
     }
   );
 }
+
+const pageTitle = computed(() =>
+  post.value ? `${post.value.title} – Joni Rämö` : "Joni Rämö"
+);
+const pageDescription = computed(() => {
+  if (!post.value) return "";
+  const text = post.value.body
+    ?.flatMap((b: any) => b.children?.map((c: any) => c.text) ?? [])
+    .join(" ");
+  return text ? text.slice(0, 155) : "";
+});
+const pageUrl = computed(
+  () => `${siteUrl}/blog/${post.value?.slug?.current ?? ""}`
+);
+const pageImage = computed(() =>
+  post.value?.image ? getImageUrl(post.value.image).width(1200).url() : ""
+);
+
+useHead({
+  title: pageTitle,
+  meta: [
+    { name: "description", content: pageDescription },
+    { property: "og:title", content: pageTitle },
+    { property: "og:description", content: pageDescription },
+    { property: "og:url", content: pageUrl },
+    { property: "og:type", content: "article" },
+    { property: "og:image", content: pageImage },
+  ],
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: computed(() =>
+    post.value
+      ? [
+          {
+            type: "application/ld+json",
+            innerHTML: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.value.title,
+              datePublished: post.value.publishedAt,
+              author: { "@type": "Person", name: "Joni Rämö" },
+              url: pageUrl.value,
+              ...(pageImage.value ? { image: pageImage.value } : {}),
+            }),
+          },
+        ]
+      : []
+  ),
+});
 
 fetchData();
 fadeIn();

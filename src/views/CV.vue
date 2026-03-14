@@ -42,7 +42,43 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from "@unhead/vue";
 import ProjectTimeline from "../components/ProjectTimeline.vue";
+
+const siteUrl = import.meta.env.VITE_SITE_URL;
+
+useHead({
+  title: "CV – Joni Rämö",
+  meta: [
+    {
+      name: "description",
+      content:
+        "CV of Joni Rämö — software professional with 10+ years of experience in cloud-native web and mobile development.",
+    },
+    { property: "og:title", content: "CV – Joni Rämö" },
+    {
+      property: "og:description",
+      content:
+        "CV of Joni Rämö — software professional with 10+ years of experience in cloud-native web and mobile development.",
+    },
+    { property: "og:url", content: `${siteUrl}/cv` },
+    { property: "og:type", content: "website" },
+  ],
+  link: [{ rel: "canonical", href: `${siteUrl}/cv` }],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Joni Rämö",
+        url: siteUrl,
+        jobTitle: "Software Developer",
+        sameAs: [`${siteUrl}/cv`],
+      }),
+    },
+  ],
+});
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   "name": "yellow-panther",
   "private": true,
   "version": "1.0.0",
-  "description": "Recreation of my website with Vue. http://joniramo.com",
+  "description": "Recreation of my website with Vue.",
   "main": "package.json",
   "author": "Joni Rämö <joni.ramo.91@gmail.com>",
   "license": "UNLICENSED",

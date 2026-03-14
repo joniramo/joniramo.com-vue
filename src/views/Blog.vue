@@ -47,6 +47,9 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import type { Ref } from "vue";
+import { useHead } from "@unhead/vue";
+
+const siteUrl = import.meta.env.VITE_SITE_URL;
 
 import sanity from "../client";
 import LoadingIcon from "../components/LoadingIcon.vue";
@@ -110,6 +113,26 @@ const handleCategoryClick = (id: string) => {
     selectedCategoryId.value = id;
   }
 };
+
+useHead({
+  title: "Blog – Joni Rämö",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Joni Rämö's blog — articles on software development, technology, and more.",
+    },
+    { property: "og:title", content: "Blog – Joni Rämö" },
+    {
+      property: "og:description",
+      content:
+        "Joni Rämö's blog — articles on software development, technology, and more.",
+    },
+    { property: "og:url", content: `${siteUrl}/blog` },
+    { property: "og:type", content: "website" },
+  ],
+  link: [{ rel: "canonical", href: `${siteUrl}/blog` }],
+});
 
 fetchData();
 fadeIn();

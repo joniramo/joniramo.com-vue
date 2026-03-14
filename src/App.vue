@@ -7,14 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import "./global.css";
-
-onMounted(() => {
-  document.documentElement.lang = "en";
-});
 </script>
 
 <style>

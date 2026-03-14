@@ -1,7 +1,7 @@
 {
   "name": "joniramo.com-vue",
   "version": "1.0.0",
-  "description": "joniramo.com (vue)",
+  "description": "Recreation of my website with Vue.",
   "author": "Joni Rämö <joni.ramo.91@gmail.com>",
   "homepage": "https://github.com/jonraem/joniramo.com-vue#readme",
   "private": true,
@@ -27,6 +27,7 @@
     "@portabletext/vue": "^1.0.11",
     "@sanity/client": "^7.6.0",
     "@sanity/image-url": "^1.0.2",
+    "@unhead/vue": "^2.1.12",
     "core-js": "^3.38.1",
     "dompurify": "^3.3.0",
     "highlight.js": "^11.10.0",

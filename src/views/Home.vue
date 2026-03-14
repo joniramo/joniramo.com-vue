@@ -18,6 +18,32 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { useHead } from "@unhead/vue";
+
+const siteUrl = import.meta.env.VITE_SITE_URL;
+
+useHead({
+  title: "Joni Rämö",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Software professional with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
+    },
+    { property: "og:title", content: "Joni Rämö" },
+    {
+      property: "og:description",
+      content:
+        "Software professional with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
+    },
+    { property: "og:url", content: `${siteUrl}/` },
+    { property: "og:type", content: "website" },
+  ],
+  link: [{ rel: "canonical", href: `${siteUrl}/` }],
+});
+</script>
+
 <style scoped>
 .home {
   max-width: 45rem;

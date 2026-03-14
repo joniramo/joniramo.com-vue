@@ -1,4 +1,5 @@
 import { mount, flushPromises } from "@vue/test-utils";
+import { createHead } from "@unhead/vue/client";
 import { vi } from "vitest";
 import type { Category, Post } from "../../src/types";
 
@@ -52,6 +53,7 @@ import Blog from "../../src/views/Blog.vue";
 const mountBlog = () =>
   mount(Blog, {
     global: {
+      plugins: [createHead()],
       stubs: ["router-link", "LoadingIcon"],
     },
   });
