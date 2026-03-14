@@ -14,3 +14,12 @@ export type Post = {
   body: any;
   image: any;
 };
+
+export type Project = {
+  _id: string;
+  title: string;
+  dateFrom: string;
+  dateTo: string | null;
+  company: string | null;
+  description: string;
+};
