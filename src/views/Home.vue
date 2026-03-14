@@ -1,9 +1,30 @@
 <template>
   <div class="home">
     <h1>Welcome</h1>
+
     <p>
-      You have discovered the website of Joni Rämö, a software developer with
-      +{{ yearsOfExperience }} years of development and consulting experience.
+      You have discovered the website of <b>Joni Rämö</b>, a software
+      professional with +{{ yearsOfExperience }} years of development and
+      consulting experience.
+
+      <br />
+      <br />
+
+      I specialize in developing cloud-native web and mobile applications,
+      primarily leveraging JavaScript and TypeScript technologies. My approach
+      to development combines technical precision with a strategic mindset,
+      ensuring solutions are not only optimal but also scalable and sustainable
+      in the long term. My goal in every project is to deliver robust, efficient
+      and human-understandable systems. (Especially now when AI agents are in
+      the mix!)
+
+      <br />
+      <br />
+
+      I thrive in collaborative environments where I can work closely with my
+      team and key stakeholders toward a shared goal. I am motivated by
+      opportunities to learn and improve continuously, regardless of the
+      technology or application domain.
 
       <br />
       <br />
@@ -14,7 +35,6 @@
       interesting project where I may help you or just to say hello!
     </p>
 
-    <br />
     <br />
 
     <h2>Featured projects</h2>
@@ -48,5 +68,12 @@ const yearsOfExperience = new Date().getUTCFullYear() - 2016;
 img {
   width: 7rem;
   height: 7rem;
+}
+
+.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: grayscale(100%);
 }
 </style>
