@@ -1,7 +1,5 @@
 <template>
   <div class="blog">
-    <router-link class="back" to="/">{{ "<< go back" }}</router-link>
-
     <h1>Blog</h1>
 
     <p v-if="loading" class="loading">
@@ -153,18 +151,29 @@ fadeIn();
 
 .categories {
   display: flex;
-  font-size: 16px;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 button.category {
   border: 1px solid var(--meta-light);
+  border-radius: 2rem;
   background: transparent;
   cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  transition:
+    0.2s background-color,
+    0.2s color,
+    0.2s border-color;
 }
 
 button.category:hover {
   background: var(--meta-dark);
+  border-color: var(--meta-dark);
 }
 
 .posts {
