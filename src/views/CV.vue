@@ -19,15 +19,18 @@
       <br />
 
       Thrives in collaborative environments where work toward a shared goal
-      happens closely with the team and key stakeholders. Actively builds teams
-      to work more effectively together and have fun while doing it. Motivated
-      by opportunities to learn and improve continuously, and to pay it forward
-      by mentoring others.
+      happens closely with the team and key stakeholders. Actively builds
+      high-performing teams where psychological safety and trust create impact.
+      Motivated by opportunities to learn and improve continuously, and to pay
+      it forward by mentoring others.
     </p>
 
     <div class="skills">
       <h2>Skills</h2>
-      <p>A breakdown of the technologies and tools I've worked with.</p>
+      <p>
+        A breakdown of the most important technologies and tools I've worked
+        with.
+      </p>
 
       <br />
 
@@ -37,7 +40,7 @@
     <div class="projects">
       <h2>Featured projects</h2>
       <p>
-        These are the most impactful projects of my career. This list is not
+        A list of the most impactful projects of my career. This list is not
         exhaustive.
       </p>
 
