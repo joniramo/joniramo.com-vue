@@ -14,7 +14,7 @@
         <div class="skill-bar-track">
           <div class="skill-bar-fill" :style="{ width: skill.level + '%' }" />
           <div v-if="activeTooltip === skill._id" class="skill-tooltip">
-            Joni has used {{ skill.title }} for {{ skill.level }}% of his
+            Joni has used <b>{{ skill.title }}</b> for {{ skill.level }}% of his
             career. That is approximately {{ yearsFor(skill.level) }} years of
             experience!
           </div>
@@ -151,5 +151,13 @@ body.dark .skill-label {
 body.dark .skill-tooltip {
   background-color: var(--text-dark);
   color: var(--background-dark);
+}
+
+@media (max-width: 768px) {
+  .skill-tooltip {
+    white-space: normal;
+    max-width: min(16rem, calc(100vw - 2rem));
+    width: max-content;
+  }
 }
 </style>

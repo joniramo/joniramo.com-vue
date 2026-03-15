@@ -77,4 +77,10 @@ body.light .anchor-btn {
 body.dark .anchor-btn {
   color: var(--highlight-dark);
 }
+
+@media (max-width: 768px) {
+  .anchor-btn {
+    display: none;
+  }
+}
 </style>
