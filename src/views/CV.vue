@@ -1,14 +1,10 @@
 <template>
   <div class="cv">
-    <img
-      class="profile-picture"
-      alt="Picture of Joni Rämö"
-      src="../assets/joni-ramo-circle.png"
-      loading="eager"
-    />
+    <h1>Curriculum Vitae</h1>
+
     <p class="intro">
-      Hello! My name is Joni Rämö, a software professional with over 10 years of
-      development and consulting experience.
+      I am a software engineer with over 10 years of development and consulting
+      experience.
 
       <br />
       <br />
@@ -32,7 +28,10 @@
 
     <div class="projects">
       <h2>Featured projects</h2>
-      <p>These are the most impactful projects from my career.</p>
+      <p>
+        These are the most impactful projects of my career. This list is not
+        exhaustive.
+      </p>
 
       <br />
 
@@ -85,11 +84,6 @@ useHead({
 .cv {
   max-width: 45rem;
   margin: 0 auto;
-}
-
-.profile-picture {
-  width: 7rem;
-  height: 7rem;
 }
 
 .projects {

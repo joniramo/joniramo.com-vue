@@ -1,19 +1,29 @@
 <template>
   <div class="home">
+    <img
+      class="profile-picture"
+      alt="Picture of Joni Rämö"
+      src="../assets/joni-ramo-circle.png"
+      loading="eager"
+    />
+
     <h1>Welcome</h1>
 
     <p>
-      You have discovered the website of <b>Joni Rämö</b>, a software
-      professional with more than 10 years of development and consulting
-      experience.
+      This is the webpage of Joni Rämö, a software engineer with more than 10
+      years of development and consulting experience.
 
       <br />
       <br />
 
-      You may be interested in my <router-link to="/cv">CV</router-link> or my
-      <router-link to="/blog">blog</router-link> where I discuss various
-      technical and non-technical topics. Let me know if there is something I
-      can help you with. Or feel free just to say hello! 👋🏻
+      If you have a project I can help you with or you wish to hire me, feel
+      free to <a href="mailto:joni.ramo@mailbox.org">send me an email</a> or
+      <a href="https://www.linkedin.com/in/joniramo/">a message on LinkedIn</a>.
+
+      <br />
+      <br />
+
+      Peace. ✌️
     </p>
   </div>
 </template>
@@ -29,13 +39,13 @@ useHead({
     {
       name: "description",
       content:
-        "Software professional with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
+        "Software engineer with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
     },
     { property: "og:title", content: "Joni Rämö" },
     {
       property: "og:description",
       content:
-        "Software professional with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
+        "Software engineer with 10+ years of development and consulting experience in cloud-native web and mobile applications.",
     },
     { property: "og:url", content: `${siteUrl}/` },
     { property: "og:type", content: "website" },
@@ -48,5 +58,10 @@ useHead({
 .home {
   max-width: 45rem;
   margin: 0 auto;
+}
+
+.profile-picture {
+  width: 7rem;
+  height: 7rem;
 }
 </style>
