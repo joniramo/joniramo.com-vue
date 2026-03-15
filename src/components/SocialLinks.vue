@@ -15,16 +15,12 @@ const socialLinks = [
     url: "https://github.com/joniramo",
   },
   {
-    label: "Stack Overflow",
-    url: "https://stackoverflow.com/users/3451985/joniramo-dev",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/joniramo/",
   },
   {
     label: "Bluesky",
     url: "https://bsky.app/profile/joniramo.dev",
-  },
-  {
-    label: "LinkedIn",
-    url: "https://www.linkedin.com/in/joniramo/",
   },
   {
     label: "Email me!",
