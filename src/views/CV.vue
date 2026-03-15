@@ -69,13 +69,13 @@ useHead({
     {
       name: "description",
       content:
-        "CV of Joni Rämö — software professional with 10+ years of experience in cloud-native web and mobile development.",
+        "Joni Rämö's CV — software professional with 10+ years of experience in cloud-native web and mobile development.",
     },
     { property: "og:title", content: "CV – Joni Rämö" },
     {
       property: "og:description",
       content:
-        "CV of Joni Rämö — software professional with 10+ years of experience in cloud-native web and mobile development.",
+        "Joni Rämö's CV — software professional with 10+ years of experience in cloud-native web and mobile development.",
     },
     { property: "og:url", content: `${siteUrl}/cv` },
     { property: "og:type", content: "website" },
