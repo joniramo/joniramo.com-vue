@@ -28,7 +28,7 @@ const socialLinks = [
   },
   {
     label: "Email me!",
-    url: "mailto:joni.ramo.91+hello@gmail.com",
+    url: "mailto:joni.ramo@mailbox.org",
   },
 ];
 </script>
