@@ -26,7 +26,9 @@
     </p>
 
     <div class="skills">
-      <h2>Featured skills</h2>
+      <AnchorButton anchor="featured-skills">
+        <h2 id="featured-skills">Featured skills</h2>
+      </AnchorButton>
       <p>
         A breakdown of the most important technologies and tools I've worked
         with.
@@ -38,7 +40,9 @@
     </div>
 
     <div class="projects">
-      <h2>Featured projects</h2>
+      <AnchorButton anchor="featured-projects">
+        <h2 id="featured-projects">Featured projects</h2>
+      </AnchorButton>
       <p>
         A list of the most impactful projects of my career. This list is not
         exhaustive.
@@ -55,6 +59,7 @@
 import { useHead } from "@unhead/vue";
 import ProjectTimeline from "../components/ProjectTimeline.vue";
 import SkillBarChart from "../components/SkillBarChart.vue";
+import AnchorButton from "../components/AnchorButton.vue";
 
 const siteUrl = import.meta.env.VITE_SITE_URL;
 
