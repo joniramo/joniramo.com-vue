@@ -23,3 +23,9 @@ export type Project = {
   company: string | null;
   description: string;
 };
+
+export type Skill = {
+  _id: string;
+  title: string;
+  level: number;
+};

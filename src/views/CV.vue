@@ -3,28 +3,36 @@
     <h1>Curriculum Vitae</h1>
 
     <p class="intro">
-      I am a software engineer with over 10 years of development and consulting
+      Software engineer with over 10 years of development and consulting
       experience.
 
       <br />
       <br />
 
-      I specialize in developing cloud-native web and mobile applications,
-      primarily leveraging JavaScript and TypeScript technologies. My approach
-      to development combines technical precision with a strategic mindset,
-      ensuring solutions are not only optimal but also scalable and sustainable
-      in the long term. My goal in every project is to deliver robust, efficient
-      and human-understandable systems. (Especially now when AI agents are in
-      the mix!)
+      Specialized in developing cloud-native web and mobile applications using a
+      combined approach of technical precision with a strategic mindset:
+      solutions are not only effective but also scalable and sustainable in the
+      long term. Delivering robust, efficient and human-understandable systems —
+      especially now when AI agents are in the mix!
 
       <br />
       <br />
 
-      I thrive in collaborative environments where I can work closely with my
-      team and key stakeholders toward a shared goal. I am motivated by
-      opportunities to learn and improve continuously, regardless of the
-      technology or application domain.
+      Thrives in collaborative environments where work toward a shared goal
+      happens closely with the team and key stakeholders. Actively builds teams
+      to work more effectively together and have fun while doing it. Motivated
+      by opportunities to learn and improve continuously, and to pay it forward
+      by mentoring others.
     </p>
+
+    <div class="skills">
+      <h2>Skills</h2>
+      <p>A breakdown of the technologies and tools I've worked with.</p>
+
+      <br />
+
+      <SkillBarChart />
+    </div>
 
     <div class="projects">
       <h2>Featured projects</h2>
@@ -43,6 +51,7 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 import ProjectTimeline from "../components/ProjectTimeline.vue";
+import SkillBarChart from "../components/SkillBarChart.vue";
 
 const siteUrl = import.meta.env.VITE_SITE_URL;
 
@@ -84,6 +93,10 @@ useHead({
 .cv {
   max-width: 45rem;
   margin: 0 auto;
+}
+
+.skills {
+  margin-top: 4rem;
 }
 
 .projects {
