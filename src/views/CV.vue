@@ -26,7 +26,7 @@
     </p>
 
     <div class="skills">
-      <h2>Skills</h2>
+      <h2>Featured skills</h2>
       <p>
         A breakdown of the most important technologies and tools I've worked
         with.
