@@ -22,6 +22,7 @@ export type Project = {
   dateTo: string | null;
   company: string | null;
   description: string;
+  symbol: string | null;
 };
 
 export type Skill = {

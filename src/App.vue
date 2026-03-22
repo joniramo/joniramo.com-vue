@@ -15,8 +15,14 @@ import "./global.css";
 <style>
 main {
   padding: 6rem 2rem;
-  min-height: calc(100vh - 13rem);
+  min-height: calc(100vh - 10rem);
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 3rem 2rem;
+  }
 }
 
 @keyframes fadeIn {
