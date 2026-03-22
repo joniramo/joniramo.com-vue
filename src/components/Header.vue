@@ -1,12 +1,14 @@
 <template>
   <header>
-    <Logo />
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/cv">CV</router-link>
-      <router-link to="/blog">Blog</router-link>
-    </nav>
-    <ThemeToggle />
+    <div class="header-content">
+      <Logo />
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/cv">CV</router-link>
+        <router-link to="/blog">Blog</router-link>
+      </nav>
+      <ThemeToggle />
+    </div>
   </header>
 </template>
 
@@ -17,13 +19,18 @@ import ThemeToggle from "./ThemeToggle.vue";
 
 <style scoped>
 header {
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  z-index: 2;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .logo {

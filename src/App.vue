@@ -14,7 +14,7 @@ import "./global.css";
 
 <style>
 main {
-  padding: 6rem 1rem;
+  padding: 6rem 2rem;
   min-height: calc(100vh - 13rem);
   box-sizing: border-box;
 }
