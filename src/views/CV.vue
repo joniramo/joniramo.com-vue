@@ -33,6 +33,11 @@
       <br />
 
       <ExperienceTimeline />
+      <a
+        href="https://www.linkedin.com/in/joniramo/"
+        class="router-link-active back"
+        >view more >></a
+      >
     </div>
 
     <div class="skills">

@@ -15,8 +15,11 @@
         <div class="content">
           <h3>{{ job.title }}</h3>
           <span class="meta">
-            <span class="company">{{ job.company }}</span> ·
-            {{ formatRange(job.dateFrom, job.dateTo) }}
+            {{
+              [job.company, formatRange(job.dateFrom, job.dateTo)]
+                .filter(Boolean)
+                .join(" · ")
+            }}
           </span>
         </div>
       </li>
@@ -82,7 +85,7 @@ onMounted(async () => {
 .timeline::before {
   content: "";
   position: absolute;
-  left: 1.25rem;
+  left: 1.5rem;
   top: 2.75rem;
   bottom: 0.2rem;
   width: 2px;
@@ -130,10 +133,6 @@ body.light .meta {
   color: var(--meta-light);
 }
 
-body.light .company {
-  color: var(--highlight-light);
-}
-
 body.dark .timeline::before {
   background-color: var(--faded-dark);
 }
@@ -144,9 +143,5 @@ body.dark .node {
 
 body.dark .meta {
   color: var(--meta-dark);
-}
-
-body.dark .company {
-  color: var(--highlight-dark);
 }
 </style>

@@ -4,11 +4,11 @@
     <p v-else-if="error" class="error">Failed to load projects.</p>
     <ul v-else class="timeline">
       <li v-for="project in projects" :key="project._id" class="timeline-item">
-        <div class="dot" />
+        <span class="symbol">{{ project.symbol }}</span>
         <div class="content">
           <h3>{{ project.title }}</h3>
           <span class="meta">{{
-            [formatRange(project.dateFrom, project.dateTo), project.company]
+            [project.company, formatRange(project.dateFrom, project.dateTo)]
               .filter(Boolean)
               .join(" · ")
           }}</span>
@@ -43,7 +43,7 @@ function formatRange(from: string, to: string | null): string {
 onMounted(async () => {
   try {
     projects.value = await sanity.fetch(
-      `*[_type == "project"] | order(dateFrom desc) { _id, title, dateFrom, dateTo, company, description }`
+      `*[_type == "project"] | order(dateFrom desc) { _id, title, dateFrom, dateTo, company, description, symbol }`
     );
   } catch {
     error.value = true;
@@ -66,28 +66,18 @@ onMounted(async () => {
   position: relative;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 0.45rem;
-  top: 0.45rem;
-  bottom: 0.2rem;
-  width: 2px;
-}
-
 .timeline-item {
   position: relative;
   padding-left: 2.5rem;
   margin-bottom: 2rem;
 }
 
-.dot {
+.symbol {
   position: absolute;
   left: 0;
-  top: 0.3rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+  top: 0;
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .content h3 {
@@ -98,24 +88,8 @@ onMounted(async () => {
   margin: 0.25rem 0 0;
 }
 
-body.light .timeline::before {
-  background-color: var(--faded-light);
-}
-
-body.light .dot {
-  background-color: var(--highlight-light);
-}
-
 body.light .meta {
   color: var(--meta-light);
-}
-
-body.dark .timeline::before {
-  background-color: var(--faded-dark);
-}
-
-body.dark .dot {
-  background-color: var(--highlight-dark);
 }
 
 body.dark .meta {

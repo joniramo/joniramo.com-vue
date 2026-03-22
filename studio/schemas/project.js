@@ -31,5 +31,11 @@ export default {
       type: "text",
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "symbol",
+      title: "Symbol",
+      type: "string",
+      description: "A single emoji or character shown as the timeline marker.",
+    },
   ],
 };
