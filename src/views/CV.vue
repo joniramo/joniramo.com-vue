@@ -25,14 +25,20 @@
       it forward by mentoring others.
     </p>
 
+    <div class="work-experience">
+      <AnchorButton anchor="work-experience">
+        <h2 id="work-experience">Work experience</h2>
+      </AnchorButton>
+
+      <br />
+
+      <ExperienceTimeline />
+    </div>
+
     <div class="skills">
       <AnchorButton anchor="featured-skills">
         <h2 id="featured-skills">Featured skills</h2>
       </AnchorButton>
-      <p>
-        A breakdown of the most important technologies and tools I've worked
-        with.
-      </p>
 
       <br />
 
@@ -43,10 +49,6 @@
       <AnchorButton anchor="featured-projects">
         <h2 id="featured-projects">Featured projects</h2>
       </AnchorButton>
-      <p>
-        A list of the most impactful projects of my career. This list is not
-        exhaustive.
-      </p>
 
       <br />
 
@@ -57,6 +59,7 @@
 
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
+import ExperienceTimeline from "../components/ExperienceTimeline.vue";
 import ProjectTimeline from "../components/ProjectTimeline.vue";
 import SkillBarChart from "../components/SkillBarChart.vue";
 import AnchorButton from "../components/AnchorButton.vue";
@@ -103,12 +106,10 @@ useHead({
   margin: 0 auto;
 }
 
+.intro,
+.work-experience,
 .skills {
-  margin-top: 4rem;
-}
-
-.projects {
-  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .banner {

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="section-heading"
+    class="anchor-heading"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
@@ -41,7 +41,7 @@ function copy() {
 </script>
 
 <style scoped>
-.section-heading {
+.anchor-heading {
   position: relative;
 }
 

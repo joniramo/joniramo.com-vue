@@ -1,30 +1,31 @@
 <template>
   <div class="home">
+    <div class="intro">
+      <h1>Joni Rämö</h1>
+
+      <div class="intro-paragraph">
+        <p>
+          I'm Joni, a full-stack software engineer. I'm interested in
+          contributing to projects where I can expand my knowledge and express
+          my creativity. Where the team and stakeholders share a common goal in
+          making a great product that brings real value to its users.
+
+          <br />
+          <br />
+
+          In my free time, you may find me working on my personal software
+          projects, punishing iron at the gym, out on a jog or enjoying the
+          world of video games.
+        </p>
+      </div>
+    </div>
+
     <img
       class="profile-picture"
       alt="Picture of Joni Rämö"
       src="../assets/joni-ramo-circle.png"
       loading="eager"
     />
-
-    <h1>Welcome</h1>
-
-    <p>
-      This is the webpage of Joni Rämö, a software engineer with more than 10
-      years of development and consulting experience.
-
-      <br />
-      <br />
-
-      If you have a project I can help you with or you wish to hire me, feel
-      free to <a href="mailto:joni.ramo@mailbox.org">send me an email</a> or
-      <a href="https://www.linkedin.com/in/joniramo/">a message on LinkedIn</a>.
-
-      <br />
-      <br />
-
-      Peace. ✌️
-    </p>
   </div>
 </template>
 
@@ -56,12 +57,29 @@ useHead({
 
 <style scoped>
 .home {
-  max-width: 45rem;
+  max-width: 50rem;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .profile-picture {
-  width: 7rem;
-  height: 7rem;
+  width: 15rem;
+  height: 15rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-picture {
+    width: 90%;
+    max-width: 22rem;
+    height: auto;
+  }
 }
 </style>
