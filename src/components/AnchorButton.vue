@@ -59,7 +59,8 @@ function copy() {
   opacity: 0;
   transition:
     opacity 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    text-shadow 0.1s ease-in;
 }
 
 .anchor-btn.visible {
@@ -72,10 +73,20 @@ function copy() {
 
 body.light .anchor-btn {
   color: var(--highlight-light);
+
+  &:hover {
+    color: var(--highlight-light);
+    text-shadow: 3px 3px var(--highlight-dark);
+  }
 }
 
 body.dark .anchor-btn {
   color: var(--highlight-dark);
+
+  &:hover {
+    color: var(--highlight-dark);
+    text-shadow: 3px 3px var(--highlight-light);
+  }
 }
 
 @media (max-width: 768px) {

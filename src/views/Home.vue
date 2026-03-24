@@ -56,6 +56,30 @@ useHead({
 </script>
 
 <style scoped>
+h1 {
+  font-family: "Gerion", sans-serif;
+  font-size: 3.25rem;
+  letter-spacing: normal;
+  text-transform: none;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+body.light {
+  h1 {
+    color: var(--highlight-dark);
+    text-shadow: 5px 5px 0px var(--highlight-light);
+  }
+}
+
+body.dark {
+  h1 {
+    color: var(--highlight-light);
+    text-shadow: 5px 5px 0px var(--highlight-dark);
+  }
+}
+
 .home {
   max-width: 50rem;
   margin: 0 auto;
@@ -71,6 +95,10 @@ useHead({
 }
 
 @media (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+  }
+
   .home {
     flex-direction: column;
     align-items: center;

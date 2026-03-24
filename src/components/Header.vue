@@ -47,12 +47,54 @@ nav {
 }
 
 nav a {
-  font-size: 0.875rem;
+  background-color: transparent;
 }
 
-nav a.router-link-active,
-nav a.router-link-exact-active {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+body.light {
+  nav a {
+    font-size: 0.875rem;
+  }
+
+  nav a.router-link-active,
+  nav a.router-link-exact-active {
+    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
+  }
+
+  nav a {
+    box-shadow: inset 0 0 0 0 var(--highlight-dark);
+    color: var(--highlight-light);
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  nav a:hover {
+    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
+    text-shadow: none;
+  }
+}
+
+body.dark {
+  nav a {
+    font-size: 0.875rem;
+  }
+
+  nav a.router-link-active,
+  nav a.router-link-exact-active {
+    box-shadow: inset 100px 0 0 0 var(--highlight-light);
+  }
+
+  nav a {
+    box-shadow: inset 0 0 0 0 var(--highlight-light);
+    color: var(--highlight-dark);
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  nav a:hover {
+    box-shadow: inset 100px 0 0 0 var(--highlight-light);
+    text-shadow: none;
+  }
 }
 </style>

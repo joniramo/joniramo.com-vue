@@ -1,3 +1,11 @@
+/* Fonts */
+@font-face {
+  font-family: "Gerion";
+  src: url("./assets/Gerion.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Variables */
 body {
   --background-light: #fff;
@@ -23,6 +31,7 @@ a {
   text-decoration: none;
   transition: 0.2s color ease-in-out;
   transition: 0.2s background ease-in-out;
+  transition: text-shadow ease-in .1s;
 }
 
 h1,
@@ -34,6 +43,11 @@ h5 {
   font-weight: 900;
   letter-spacing: 0.2em;
   line-height: 1.25em;
+  text-transform: uppercase;
+}
+
+nav a {
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
 }
 
@@ -75,8 +89,9 @@ body.light {
   }
 
   a:hover {
-    color: var(--background-light);
-    background: var(--highlight-light);
+    font-weight: bold;
+    color: var(--highlight-light);
+    text-shadow: 3px 3px var(--highlight-dark);
   }
 
   .logo path {
@@ -118,8 +133,9 @@ body.dark {
   }
 
   a:hover {
-    color: var(--background-dark);
-    background: var(--highlight-dark);
+    font-weight: bold;
+    color: var(--highlight-dark);
+    text-shadow: 3px 3px var(--highlight-light);
   }
 
   .logo path {
