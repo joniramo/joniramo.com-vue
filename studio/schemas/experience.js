@@ -32,5 +32,10 @@ export default {
       type: "image",
       options: { hotspot: false },
     },
+    {
+      name: "companyUrl",
+      title: "Company URL",
+      type: "url",
+    },
   ],
 };

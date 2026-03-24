@@ -4,14 +4,20 @@
     <p v-else-if="error" class="error">Failed to load experience.</p>
     <ul v-else class="timeline">
       <li v-for="job in experience" :key="job._id" class="timeline-item">
-        <div class="node">
+        <component
+          :is="job.companyUrl ? 'a' : 'div'"
+          :href="job.companyUrl || undefined"
+          :target="job.companyUrl ? '_blank' : undefined"
+          :rel="job.companyUrl ? 'noopener noreferrer' : undefined"
+          class="node"
+        >
           <img
             v-if="job.logoUrl"
             :src="job.logoUrl"
             :alt="job.company"
             class="node-img"
           />
-        </div>
+        </component>
         <div class="content">
           <h3>{{ job.title }}</h3>
           <span class="meta">
@@ -39,6 +45,7 @@ interface Experience {
   dateFrom: string;
   dateTo: string | null;
   logoUrl: string | null;
+  companyUrl: string | null;
 }
 
 const experience = ref<Experience[]>([]);
@@ -59,7 +66,7 @@ function formatRange(from: string, to: string | null): string {
 onMounted(async () => {
   try {
     experience.value = await sanity.fetch(
-      `*[_type == "experience"] | order(dateFrom desc) { _id, title, company, dateFrom, dateTo, "logoUrl": logo.asset->url }`
+      `*[_type == "experience"] | order(dateFrom desc) { _id, title, company, dateFrom, dateTo, "logoUrl": logo.asset->url, companyUrl }`
     );
   } catch {
     error.value = true;
@@ -108,6 +115,7 @@ onMounted(async () => {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: box-shadow 0.1s ease-in;
 }
 
 .node-img {
@@ -127,6 +135,10 @@ body.light .timeline::before {
 
 body.light .node {
   background-color: var(--highlight-light);
+
+  &:hover {
+    box-shadow: 3px 3px var(--highlight-dark);
+  }
 }
 
 body.light .meta {
@@ -139,6 +151,10 @@ body.dark .timeline::before {
 
 body.dark .node {
   background-color: var(--highlight-dark);
+
+  &:hover {
+    box-shadow: 3px 3px var(--highlight-light);
+  }
 }
 
 body.dark .meta {
