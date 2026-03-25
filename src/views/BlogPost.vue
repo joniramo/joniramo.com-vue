@@ -20,7 +20,7 @@
         :src="getImageUrl(post.image).width(1080).url()"
       />
 
-      <p class="tagline">Published at {{ getDateString(post.publishedAt) }}</p>
+      <p class="date">Published on {{ getDateString(post.publishedAt) }}</p>
       <PortableText :value="blocks" :components="components" />
     </div>
   </div>
@@ -188,9 +188,20 @@ fadeIn();
   margin-top: 2rem;
 }
 
-.tagline {
+.date {
   font-size: 0.8rem;
-  color: var(--meta-light);
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
+}
+
+body.light {
+  .date {
+    color: var(--meta-light);
+  }
+}
+
+body.dark {
+  .date {
+    color: var(--meta-dark);
+  }
 }
 </style>

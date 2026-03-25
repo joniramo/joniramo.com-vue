@@ -21,23 +21,12 @@
       </button>
     </div>
 
-    <div v-if="posts.length" class="posts">
-      <div v-for="post in filteredPosts" class="post" :key="post._id">
-        <div class="tags">
-          <span v-for="category in post.categories">{{
-            hashtagify(category.title)
-          }}</span>
-        </div>
-        <h2>
-          <router-link :to="`/blog/${post.slug.current}`">
-            {{ post.title }}
-          </router-link>
-        </h2>
-        <span class="tagline">
-          {{ getDateString(post.publishedAt) }}
-        </span>
-        <hr />
-      </div>
+    <div v-if="posts.length" class="blog-posts">
+      <BlogPostCard
+        v-for="post in filteredPosts"
+        :post="post"
+        :key="post._id"
+      />
     </div>
   </div>
 </template>
@@ -51,9 +40,10 @@ const siteUrl = import.meta.env.VITE_SITE_URL;
 
 import sanity from "../client";
 import LoadingIcon from "../components/LoadingIcon.vue";
+import BlogPostCard from "../components/BlogPostCard.vue";
 import type { Category, Post } from "../types";
 import { fadeIn } from "../utils/animations";
-import { getDateString, sortAscendingByPublishedAt } from "../utils/dates";
+import { sortAscendingByPublishedAt } from "../utils/dates";
 import { hashtagify } from "../utils/string";
 
 const loading: Ref<boolean> = ref(false);
@@ -184,29 +174,10 @@ button.category:hover {
   border-color: var(--meta-dark);
 }
 
-.posts {
+.blog-posts {
   margin: 0 auto;
   max-width: 45em;
   width: 100%;
-}
-
-.post {
-  box-sizing: border-box;
-  margin-top: 3rem;
-}
-
-.post h2 {
-  margin: 0.5rem 0;
-
-  a {
-    color: currentColor;
-  }
-}
-
-.tags,
-.tagline {
-  color: var(--meta-light);
-  gap: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {

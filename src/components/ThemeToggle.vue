@@ -61,7 +61,7 @@ watch(isDarkTheme, (newValue) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--faded-light);
+  background-color: var(--border-light);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -86,11 +86,11 @@ body.dark .slider:before {
 }
 
 input:checked + .slider {
-  background-color: var(--faded-dark);
+  background-color: var(--border-dark);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--faded-dark);
+  box-shadow: 0 0 1px var(--border-dark);
 }
 
 input:checked + .slider:before {

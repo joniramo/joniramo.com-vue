@@ -10,6 +10,8 @@
 body {
   --background-light: #e8e8e8;
   --background-dark: #3b3e51;
+  --element-background-light: #f3f3f3;
+  --element-background-dark: #313444;
   --text-light: #000;
   --text-dark: #fff;
   --heading-light: #343890;
@@ -18,8 +20,10 @@ body {
   --highlight-dark: #1af1ff;
   --meta-light: #5c5c5c;
   --meta-dark: #bdbdbd;
-  --faded-light: #d0d0d0;
-  --faded-dark: #696969;
+  --border-light: #d0d0d0;
+  --border-dark: #4f4f4f;
+  --shadow-light: #dbd2db;
+  --shadow-dark: #1d292c;
 
   min-height: 100vh;
   background-attachment: fixed;

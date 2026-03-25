@@ -150,7 +150,7 @@ body.dark .node:hover {
 
 body.light {
   .timeline::before {
-    background-color: var(--faded-light);
+    background-color: var(--border-light);
   }
 
   .node {
@@ -168,7 +168,7 @@ body.light {
 
 body.dark {
   .timeline::before {
-    background-color: var(--faded-dark);
+    background-color: var(--border-dark);
   }
 
   .node {

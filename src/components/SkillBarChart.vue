@@ -118,7 +118,7 @@ onMounted(async () => {
 }
 
 body.light .skill-bar-track {
-  background-color: var(--faded-light);
+  background-color: var(--border-light);
 }
 
 body.light .skill-bar-fill {
@@ -136,7 +136,7 @@ body.light .skill-tooltip {
 }
 
 body.dark .skill-bar-track {
-  background-color: var(--faded-dark);
+  background-color: var(--border-dark);
 }
 
 body.dark .skill-bar-fill {
