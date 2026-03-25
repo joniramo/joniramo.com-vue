@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="header-content">
-      <Logo />
+      <router-link class="logo-link" to="/">
+        <Logo />
+      </router-link>
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/cv">CV</router-link>
@@ -57,6 +59,10 @@ nav a {
   background-image: none; /* Removes underline animation. */
 }
 
+.logo-link {
+  background-image: none; /* Removes underline animation. */
+}
+
 body.light {
   nav a {
     font-size: 0.875rem;
@@ -102,6 +108,17 @@ body.dark {
   nav a:hover {
     color: var(--text-light);
     box-shadow: inset 100px 0 0 0 var(--highlight-dark);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  nav {
+    gap: 1rem;
   }
 }
 </style>
