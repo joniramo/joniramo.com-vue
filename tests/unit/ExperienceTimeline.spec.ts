@@ -88,7 +88,6 @@ describe("ExperienceTimeline", () => {
     const node = wrapper.find(".node");
     expect(node.element.tagName).toBe("A");
     expect(node.attributes("href")).toBe("https://acme.example.com");
-    expect(node.attributes("target")).toBe("_blank");
   });
 
   it("renders a div node when companyUrl is not set", async () => {

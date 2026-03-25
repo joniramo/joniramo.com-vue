@@ -7,7 +7,6 @@
         <component
           :is="job.companyUrl ? 'a' : 'div'"
           :href="job.companyUrl || undefined"
-          :target="job.companyUrl ? '_blank' : undefined"
           :rel="job.companyUrl ? 'noopener noreferrer' : undefined"
           class="node"
         >
