@@ -9,7 +9,6 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title>Logo of Joni Rämö</title>
     <desc>
       A multi-line text logo of Joni Rämö constituting the initials J and R.
     </desc>
