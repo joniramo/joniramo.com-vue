@@ -1,6 +1,6 @@
 <template>
   <div class="cv">
-    <h1>Curriculum Vitae</h1>
+    <h1>This is my <span class="highlight">Curriculum Vitae</span>.</h1>
 
     <p class="intro">
       Software engineer with over 10 years of development and consulting
@@ -54,6 +54,7 @@
       <AnchorButton anchor="featured-projects">
         <h2 id="featured-projects">Featured projects</h2>
       </AnchorButton>
+      <p>Some of the projects I've worked on.</p>
 
       <br />
 
@@ -109,6 +110,14 @@ useHead({
 .cv {
   max-width: 45rem;
   margin: 0 auto;
+}
+
+body.light .highlight {
+  color: var(--highlight-light);
+}
+
+body.dark .highlight {
+  color: var(--highlight-dark);
 }
 
 .intro,

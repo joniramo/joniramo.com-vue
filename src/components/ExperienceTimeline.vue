@@ -19,13 +19,11 @@
           />
         </component>
         <div class="content">
-          <h3>{{ job.title }}</h3>
+          <h3>
+            <span class="highlight">{{ job.title }}</span> at {{ job.company }}
+          </h3>
           <span class="meta">
-            {{
-              [job.company, formatRange(job.dateFrom, job.dateTo)]
-                .filter(Boolean)
-                .join(" · ")
-            }}
+            {{ formatRange(job.dateFrom, job.dateTo) }}
           </span>
         </div>
       </li>
@@ -93,8 +91,8 @@ onMounted(async () => {
   content: "";
   position: absolute;
   left: 1.5rem;
-  top: 2.75rem;
-  bottom: 0.2rem;
+  top: 0.25rem;
+  bottom: 0.5rem;
   width: 2px;
 }
 
@@ -110,54 +108,79 @@ onMounted(async () => {
   top: 0;
   width: 3rem;
   height: 3rem;
-  border-radius: 0.4rem;
+  border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transition: box-shadow 0.1s ease-in;
+  transition: box-shadow 0.1s;
+}
+
+body.light .node:hover {
+  box-shadow: 0 0 0 3px var(--highlight-light);
+
+  .node-img {
+    box-shadow: none;
+  }
+}
+
+body.dark .node:hover {
+  box-shadow: 0 0 0 3px var(--highlight-dark);
+
+  .node-img {
+    box-shadow: none;
+  }
 }
 
 .node-img {
-  width: 85%;
-  height: 85%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   border-radius: 0.25rem;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  transition: filter 0.1s;
 }
 
 .content h3 {
   margin: 0 0 0.25rem;
 }
 
-body.light .timeline::before {
-  background-color: var(--faded-light);
+.meta {
+  font-size: 0.8rem;
 }
 
-body.light .node {
-  background-color: var(--highlight-light);
+body.light {
+  .timeline::before {
+    background-color: var(--faded-light);
+  }
 
-  &:hover {
-    box-shadow: 3px 3px var(--highlight-dark);
+  .node {
+    background-color: var(--highlight-light);
+  }
+
+  .meta {
+    color: var(--meta-light);
+  }
+
+  .highlight {
+    color: var(--highlight-light);
   }
 }
 
-body.light .meta {
-  color: var(--meta-light);
-}
-
-body.dark .timeline::before {
-  background-color: var(--faded-dark);
-}
-
-body.dark .node {
-  background-color: var(--highlight-dark);
-
-  &:hover {
-    box-shadow: 3px 3px var(--highlight-light);
+body.dark {
+  .timeline::before {
+    background-color: var(--faded-dark);
   }
-}
 
-body.dark .meta {
-  color: var(--meta-dark);
+  .node {
+    background-color: var(--highlight-dark);
+  }
+
+  .meta {
+    color: var(--meta-dark);
+  }
+
+  .highlight {
+    color: var(--highlight-dark);
+  }
 }
 </style>

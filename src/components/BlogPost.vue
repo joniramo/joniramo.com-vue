@@ -20,9 +20,7 @@
         :src="getImageUrl(post.image).width(1080).url()"
       />
 
-      <p class="tagline">
-        Published at {{ getDateTimeString(post.publishedAt) }}
-      </p>
+      <p class="tagline">Published at {{ getDateString(post.publishedAt) }}</p>
       <PortableText :value="blocks" :components="components" />
     </div>
   </div>
@@ -44,7 +42,7 @@ import { useRoute } from "vue-router";
 import sanity from "../client";
 import LoadingIcon from "./LoadingIcon.vue";
 import { fadeIn } from "../utils/animations";
-import { getDateTimeString } from "../utils/dates";
+import { getDateString } from "../utils/dates";
 import type { Post } from "../types";
 
 const loading = ref(false);
@@ -184,6 +182,10 @@ fadeIn();
 
 .back {
   align-self: flex-start;
+}
+
+.content {
+  margin-top: 2rem;
 }
 
 .tagline {

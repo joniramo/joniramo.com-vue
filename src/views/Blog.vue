@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-    <h1>Blog</h1>
+    <h1>Read my <span class="highlight">blog</span>, why don't you?</h1>
 
     <p v-if="loading" class="loading">
       <LoadingIcon />
@@ -145,6 +145,14 @@ fadeIn();
   text-align: left;
 }
 
+body.light .highlight {
+  color: var(--highlight-light);
+}
+
+body.dark .highlight {
+  color: var(--highlight-dark);
+}
+
 .back {
   align-self: flex-start;
 }
@@ -185,9 +193,13 @@ button.category:hover {
 .post {
   box-sizing: border-box;
   margin-top: 3rem;
+}
 
-  h2 {
-    margin: 0.5rem 0;
+.post h2 {
+  margin: 0.5rem 0;
+
+  a {
+    color: currentColor;
   }
 }
 

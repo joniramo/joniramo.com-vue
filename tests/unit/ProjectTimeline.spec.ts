@@ -67,7 +67,6 @@ describe("ProjectTimeline", () => {
     const meta = wrapper.find(".meta").text();
     expect(meta).toContain("Jan 2022");
     expect(meta).toContain("Jun 2023");
-    expect(meta).toContain("Acme Corp");
   });
 
   it("shows Present when dateTo is null", async () => {
@@ -78,11 +77,11 @@ describe("ProjectTimeline", () => {
     expect(wrapper.find(".meta").text()).toContain("Present");
   });
 
-  it("omits company separator when company is null", async () => {
-    vi.mocked(sanity.fetch).mockResolvedValue([mockProjects[1]] as any);
+  it("renders project description", async () => {
+    vi.mocked(sanity.fetch).mockResolvedValue([mockProjects[0]] as any);
     const wrapper = mount(ProjectTimeline);
     await flushPromises();
 
-    expect(wrapper.find(".meta").text()).not.toContain("·");
+    expect(wrapper.find(".content p").text()).toBe("A great project.");
   });
 });

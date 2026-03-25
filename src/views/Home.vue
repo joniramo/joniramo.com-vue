@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <div class="intro">
-      <h1>Joni Rämö</h1>
+      <h1>Hi, my name is <span class="highlight">Joni</span>.</h1>
 
       <div class="intro-paragraph">
         <p>
-          I'm Joni, a full-stack software engineer. I'm interested in
-          contributing to projects where I can expand my knowledge and express
-          my creativity. Where the team and stakeholders share a common goal in
-          making a great product that brings real value to its users.
+          I'm a full-stack software engineer. I'm interested in contributing to
+          projects where I can expand my knowledge and express my creativity.
+          Where the team and stakeholders share a common goal in making a great
+          product that brings real value to its users.
 
           <br />
           <br />
@@ -35,7 +35,7 @@ import { useHead } from "@unhead/vue";
 const siteUrl = import.meta.env.VITE_SITE_URL;
 
 useHead({
-  title: "Joni Rämö",
+  title: "Joni Rämö's Portfolio",
   meta: [
     {
       name: "description",
@@ -56,36 +56,24 @@ useHead({
 </script>
 
 <style scoped>
-h1 {
-  font-family: "Gerion", sans-serif;
-  font-size: 3.25rem;
-  letter-spacing: normal;
-  text-transform: none;
-  margin-top: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-body.light {
-  h1 {
-    color: var(--highlight-dark);
-    text-shadow: 5px 5px 0px var(--highlight-light);
-  }
-}
-
-body.dark {
-  h1 {
-    color: var(--highlight-light);
-    text-shadow: 5px 5px 0px var(--highlight-dark);
-  }
-}
-
 .home {
   max-width: 50rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 3rem;
+}
+
+.highlight {
+  cursor: pointer;
+}
+
+body.light .highlight {
+  color: var(--highlight-light);
+}
+
+body.dark .highlight {
+  color: var(--highlight-dark);
 }
 
 .profile-picture {

@@ -8,9 +8,7 @@
         <div class="content">
           <h3>{{ project.title }}</h3>
           <span class="meta">{{
-            [project.company, formatRange(project.dateFrom, project.dateTo)]
-              .filter(Boolean)
-              .join(" · ")
+            formatRange(project.dateFrom, project.dateTo)
           }}</span>
           <p>{{ project.description }}</p>
         </div>
@@ -86,6 +84,10 @@ onMounted(async () => {
 
 .content p {
   margin: 0.25rem 0 0;
+}
+
+.meta {
+  font-size: 0.8rem;
 }
 
 body.light .meta {

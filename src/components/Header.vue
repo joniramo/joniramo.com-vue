@@ -48,6 +48,9 @@ nav {
 
 nav a {
   background-color: transparent;
+  transition:
+    color 0.1s ease-in,
+    box-shadow 0.2s ease-in-out;
 }
 
 body.light {
@@ -57,20 +60,20 @@ body.light {
 
   nav a.router-link-active,
   nav a.router-link-exact-active {
-    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
+    color: var(--text-dark);
+    box-shadow: inset 100px 0 0 0 var(--highlight-light);
   }
 
   nav a {
-    box-shadow: inset 0 0 0 0 var(--highlight-dark);
-    color: var(--highlight-light);
+    color: var(--text-light);
+    box-shadow: inset 0 0 0 0 var(--highlight-light);
     margin: 0 -0.25rem;
     padding: 0 0.25rem;
-    transition: box-shadow 0.2s ease-in-out;
   }
 
   nav a:hover {
-    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
-    text-shadow: none;
+    color: var(--text-dark);
+    box-shadow: inset 100px 0 0 0 var(--highlight-light);
   }
 }
 
@@ -81,20 +84,20 @@ body.dark {
 
   nav a.router-link-active,
   nav a.router-link-exact-active {
-    box-shadow: inset 100px 0 0 0 var(--highlight-light);
+    color: var(--text-light);
+    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
   }
 
   nav a {
-    box-shadow: inset 0 0 0 0 var(--highlight-light);
-    color: var(--highlight-dark);
+    color: var(--text-dark);
+    box-shadow: inset 0 0 0 0 var(--highlight-dark);
     margin: 0 -0.25rem;
     padding: 0 0.25rem;
-    transition: box-shadow 0.2s ease-in-out;
   }
 
   nav a:hover {
-    box-shadow: inset 100px 0 0 0 var(--highlight-light);
-    text-shadow: none;
+    color: var(--text-light);
+    box-shadow: inset 100px 0 0 0 var(--highlight-dark);
   }
 }
 </style>
