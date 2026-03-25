@@ -108,19 +108,6 @@ body.light {
     fill: var(--highlight-light);
   }
 
-  .categories {
-    color: var(--text-light);
-  }
-
-  button.category:hover {
-    color: var(--text-dark);
-    background-color: var(--meta-dark);
-  } 
-
-  button.category.active {
-    color: var(--text-dark);
-    background-color: var(--highlight-light);
-  }
 }
 
 body.dark {
@@ -150,17 +137,4 @@ body.dark {
     fill: var(--highlight-dark);
   }
 
-  .categories {
-    color: var(--text-dark);
-  }
-
-  button.category:hover {
-    color: var(--text-light);
-    background-color: var(--meta-light);
-  }
-
-  .categories button.active {
-    color: var(--text-light);
-    background-color: var(--highlight-dark);
-  }
 }

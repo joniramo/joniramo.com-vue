@@ -10,29 +10,18 @@
       Something went wrong 😰
     </p>
 
-    <div v-if="categories.length" class="categories">
-      Categories:
-      <button
-        v-for="category in categories"
-        :class="{ category, active: category._id === selectedCategoryId }"
-        @click="() => handleCategoryClick(category._id)"
-      >
-        {{ hashtagify(category.title) }}
-      </button>
-    </div>
-
     <div v-if="posts.length" class="blog-posts">
       <BlogPostCard
-        v-for="post in filteredPosts"
-        :post="post"
+        v-for="(post, index) in posts"
         :key="post._id"
+        :post="post"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import type { Ref } from "vue";
 import { useHead } from "@unhead/vue";
 
@@ -41,29 +30,18 @@ const siteUrl = import.meta.env.VITE_SITE_URL;
 import sanity from "../client";
 import LoadingIcon from "../components/LoadingIcon.vue";
 import BlogPostCard from "../components/BlogPostCard.vue";
-import type { Category, Post } from "../types";
+import type { Post } from "../types";
 import { fadeIn } from "../utils/animations";
 import { sortAscendingByPublishedAt } from "../utils/dates";
-import { hashtagify } from "../utils/string";
 
 const loading: Ref<boolean> = ref(false);
 const error: Ref<string | null> = ref(null);
-const selectedCategoryId: Ref<string | null> = ref(null);
-const categories: Ref<Category[]> = ref([]);
 const posts: Ref<Post[]> = ref([]);
 
-const categoryQuery = `*[_type == "category"]{
-  _id,
-  title,
-}[0...25]`;
 const postQuery = `*[_type == "post"]{
   _id,
   title,
   slug,
-  categories[]->{
-    _id,
-    title
-  },
   publishedAt
 }[0...25]`;
 
@@ -71,10 +49,9 @@ function fetchData() {
   loading.value = true;
   error.value = null;
 
-  Promise.all([sanity.fetch(categoryQuery), sanity.fetch(postQuery)]).then(
-    ([categoryData, postData]) => {
-      categories.value = categoryData;
-      posts.value = postData.sort(sortAscendingByPublishedAt);
+  sanity.fetch(postQuery).then(
+    (data) => {
+      posts.value = data.sort(sortAscendingByPublishedAt);
       loading.value = false;
     },
     (err) => {
@@ -83,24 +60,6 @@ function fetchData() {
     }
   );
 }
-
-const filteredPosts = computed(() => {
-  if (!selectedCategoryId.value) {
-    return posts.value;
-  }
-
-  return posts.value.filter((post) =>
-    post.categories?.some((c: Category) => c._id === selectedCategoryId.value)
-  );
-});
-
-const handleCategoryClick = (id: string) => {
-  if (id === selectedCategoryId.value) {
-    selectedCategoryId.value = null;
-  } else {
-    selectedCategoryId.value = id;
-  }
-};
 
 useHead({
   title: "Blog – Joni Rämö",
@@ -141,37 +100,6 @@ body.light .highlight {
 
 body.dark .highlight {
   color: var(--highlight-dark);
-}
-
-.back {
-  align-self: flex-start;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-button.category {
-  border: 1px solid var(--meta-light);
-  border-radius: 2rem;
-  background: transparent;
-  cursor: pointer;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  transition:
-    0.2s background-color,
-    0.2s color,
-    0.2s border-color;
-}
-
-button.category:hover {
-  background: var(--meta-dark);
-  border-color: var(--meta-dark);
 }
 
 .blog-posts {
