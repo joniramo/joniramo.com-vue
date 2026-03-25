@@ -40,7 +40,7 @@ const siteUrl = import.meta.env.VITE_SITE_URL;
 import { useRoute } from "vue-router";
 
 import sanity from "../client";
-import LoadingIcon from "./LoadingIcon.vue";
+import LoadingIcon from "../components/LoadingIcon.vue";
 import { fadeIn } from "../utils/animations";
 import { getDateString } from "../utils/dates";
 import type { Post } from "../types";

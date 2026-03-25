@@ -1,6 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 
-import BlogPost from "../components/BlogPost.vue";
+import BlogPost from "../views/BlogPost.vue";
 import Blog from "../views/Blog.vue";
 import CV from "../views/CV.vue";
 import Home from "../views/Home.vue";
