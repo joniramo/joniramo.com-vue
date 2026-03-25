@@ -65,10 +65,6 @@ useHead({
   gap: 3rem;
 }
 
-.highlight {
-  cursor: pointer;
-}
-
 body.light .highlight {
   color: var(--highlight-light);
 }

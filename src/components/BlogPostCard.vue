@@ -21,7 +21,7 @@ defineProps<{ post: Post }>();
 <style scoped>
 .blog-post-card {
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding: 2rem;
   border-radius: 1rem;
   transition:

@@ -35,9 +35,19 @@ body {
 
 /* Global styles */
 a {
+  position: relative;
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
   transition: 0.2s color ease-in-out;
   transition: 0.2s background ease-in-out;
+  transition: background-size 0.3s;
+}
+
+a:hover, a:focus {
+  background-size: 100% 2px;
 }
 
 h1 {
@@ -107,7 +117,6 @@ body.light {
   .logo path {
     fill: var(--highlight-light);
   }
-
 }
 
 body.dark {
@@ -136,5 +145,4 @@ body.dark {
   .logo path {
     fill: var(--highlight-dark);
   }
-
 }

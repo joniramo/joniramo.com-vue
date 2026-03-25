@@ -53,6 +53,10 @@ nav a {
     box-shadow 0.2s ease-in-out;
 }
 
+nav a {
+  background-image: none; /* Removes underline animation. */
+}
+
 body.light {
   nav a {
     font-size: 0.875rem;

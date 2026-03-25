@@ -106,6 +106,10 @@ body.dark .highlight {
   width: 100%;
 }
 
+.blog-posts a {
+  background-image: none; /* Removes underline animation. */
+}
+
 @media only screen and (max-width: 768px) {
   .blog {
     width: unset;
