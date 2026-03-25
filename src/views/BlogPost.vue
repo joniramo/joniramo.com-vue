@@ -178,6 +178,10 @@ fetchData();
   word-break: break-word;
 }
 
+.blog-post h1 {
+  margin-bottom: 1rem;
+}
+
 .back {
   align-self: flex-start;
 }
@@ -188,7 +192,7 @@ fetchData();
 
 .date {
   font-size: 0.8rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 2rem;
 }
 
 body.light {

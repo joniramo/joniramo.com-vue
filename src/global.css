@@ -38,16 +38,16 @@ a {
   position: relative;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
+  background-position: 0% 101%;
   background-repeat: no-repeat;
-  background-size: 0% 2px;
+  background-size: 0% 1px;
   transition: 0.2s color ease-in-out;
   transition: 0.2s background ease-in-out;
-  transition: background-size 0.3s;
+  transition: background-size 0.2s;
 }
 
 a:hover, a:focus {
-  background-size: 100% 2px;
+  background-size: 100% 1px;
 }
 
 h1 {
