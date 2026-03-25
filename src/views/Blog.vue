@@ -31,7 +31,6 @@ import sanity from "../client";
 import LoadingIcon from "../components/LoadingIcon.vue";
 import BlogPostCard from "../components/BlogPostCard.vue";
 import type { Post } from "../types";
-import { fadeIn } from "../utils/animations";
 import { sortAscendingByPublishedAt } from "../utils/dates";
 
 const loading: Ref<boolean> = ref(false);
@@ -82,7 +81,6 @@ useHead({
 });
 
 fetchData();
-fadeIn();
 </script>
 
 <style scoped>

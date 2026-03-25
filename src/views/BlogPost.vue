@@ -41,7 +41,6 @@ import { useRoute } from "vue-router";
 
 import sanity from "../client";
 import LoadingIcon from "../components/LoadingIcon.vue";
-import { fadeIn } from "../utils/animations";
 import { getDateString } from "../utils/dates";
 import type { Post } from "../types";
 
@@ -163,7 +162,6 @@ useHead({
 });
 
 fetchData();
-fadeIn();
 </script>
 
 <style scoped>
