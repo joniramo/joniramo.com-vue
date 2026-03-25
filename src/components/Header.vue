@@ -34,8 +34,8 @@ header {
 }
 
 .logo {
-  height: 2rem;
-  width: 2rem;
+  height: 2.75rem;
+  width: 2.75rem;
 }
 
 nav {
