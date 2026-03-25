@@ -25,6 +25,7 @@
       alt="Picture of Joni Rämö"
       src="../assets/joni-ramo-circle.png"
       loading="eager"
+      @error="$el.style.color = 'inherit'"
     />
   </div>
 </template>
@@ -80,6 +81,7 @@ body.dark .highlight {
   width: 15rem;
   height: 15rem;
   flex-shrink: 0;
+  color: transparent;
 }
 
 @media (max-width: 600px) {
