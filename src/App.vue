@@ -21,8 +21,7 @@ main {
 
 @media (max-width: 600px) {
   main {
-    padding: 3rem 2rem;
+    padding: 3rem 1.5rem;
   }
 }
-
 </style>
