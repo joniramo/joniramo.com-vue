@@ -1,30 +1,29 @@
 <template>
   <div class="social-links">
     <ul>
-      <li v-for="link in socialLinks">
-        <a :href="link.url">{{ link.label }}</a>
+      <li v-for="link in socialLinks" :key="link.alt">
+        <a :href="link.url" :aria-label="link.alt" v-html="link.icon" />
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
+import githubIcon from "../assets/github.svg?raw";
+import linkedinIcon from "../assets/linkedin.svg?raw";
+import blueskyIcon from "../assets/bluesky.svg?raw";
+
 const socialLinks = [
+  { alt: "Github", icon: githubIcon, url: "https://github.com/joniramo" },
   {
-    label: "Github",
-    url: "https://github.com/joniramo",
-  },
-  {
-    label: "LinkedIn",
+    alt: "LinkedIn",
+    icon: linkedinIcon,
     url: "https://www.linkedin.com/in/joniramo/",
   },
   {
-    label: "Bluesky",
+    alt: "Bluesky",
+    icon: blueskyIcon,
     url: "https://bsky.app/profile/joniramo.dev",
-  },
-  {
-    label: "Email me!",
-    url: "mailto:joni.ramo@mailbox.org",
   },
 ];
 </script>
@@ -39,5 +38,31 @@ ul {
 
 li {
   margin-right: 2rem;
+}
+
+a :deep(svg) {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: fill 0.1s;
+}
+
+body.light {
+  a :deep(svg) {
+    fill: var(--text-light);
+  }
+
+  a:hover :deep(svg) {
+    fill: var(--highlight-light);
+  }
+}
+
+body.dark {
+  a :deep(svg) {
+    fill: var(--text-dark);
+  }
+
+  a:hover :deep(svg) {
+    fill: var(--highlight-dark);
+  }
 }
 </style>
