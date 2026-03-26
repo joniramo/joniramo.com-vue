@@ -28,7 +28,7 @@ footer {
 }
 
 .footer-content {
-  max-width: 50rem;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

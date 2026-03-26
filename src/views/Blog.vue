@@ -87,7 +87,7 @@ fetchData();
 .blog {
   display: flex;
   flex-direction: column;
-  max-width: 45rem;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   text-align: left;
 }
@@ -101,8 +101,6 @@ body.dark .highlight {
 }
 
 .blog-posts {
-  margin: 0 auto;
-  max-width: 45em;
   width: 100%;
 }
 

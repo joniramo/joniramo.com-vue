@@ -174,7 +174,7 @@ fetchData();
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 45em;
+  max-width: var(--content-max-width);
   word-break: break-word;
 }
 

@@ -74,11 +74,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.timeline-wrapper {
-  max-width: 45rem;
-  margin: 0 auto;
-}
-
 .timeline {
   list-style: none;
   padding: 0;

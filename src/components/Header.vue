@@ -31,7 +31,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 50rem;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
@@ -44,7 +44,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  max-width: 45rem;
   margin: 0 auto;
 }
 

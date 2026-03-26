@@ -108,7 +108,7 @@ useHead({
 
 <style scoped>
 .cv {
-  max-width: 45rem;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 

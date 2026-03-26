@@ -58,7 +58,7 @@ useHead({
 
 <style scoped>
 .home {
-  max-width: 50rem;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   display: flex;
   align-items: center;

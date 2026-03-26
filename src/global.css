@@ -25,6 +25,8 @@ body {
   --shadow-light: #dbd2db;
   --shadow-dark: #1d292c;
 
+  --content-max-width: 45rem;
+
   min-height: 100vh;
   background-attachment: fixed;
   margin: 0;
