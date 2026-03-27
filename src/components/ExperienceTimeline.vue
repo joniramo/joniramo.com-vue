@@ -34,6 +34,7 @@
 import { ref, onMounted } from "vue";
 import sanity from "../client";
 import LoadingIcon from "./LoadingIcon.vue";
+import { formatRange } from "../utils/dates";
 
 interface Experience {
   _id: string;
@@ -48,17 +49,6 @@ interface Experience {
 const experience = ref<Experience[]>([]);
 const loading = ref(true);
 const error = ref(false);
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-  });
-}
-
-function formatRange(from: string, to: string | null): string {
-  return `${formatDate(from)} – ${to ? formatDate(to) : "Present"}`;
-}
 
 onMounted(async () => {
   try {

@@ -18,8 +18,10 @@ body {
   --heading-dark: #6066e8;
   --highlight-light: #ff407b;
   --highlight-dark: #1af1ff;
-  --meta-light: #5c5c5c;
-  --meta-dark: #bdbdbd;
+  --meta-light: #535353;
+  --meta-lighter: #787878;
+  --meta-dark: #c4c4c4;
+  --meta-darker: #9b9b9b;
   --border-light: #d0d0d0;
   --border-dark: #4f4f4f;
   --shadow-light: #dbd2db;

@@ -80,7 +80,7 @@ body.dark .highlight {
   color: transparent;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 4rem;
   }

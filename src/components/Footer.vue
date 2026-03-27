@@ -3,7 +3,7 @@
     <div class="footer-content">
       <SocialLinks />
       <p class="email">
-        Send me an email to <span class="highlight">joni</span> dot
+        Send me email to <span class="highlight">joni</span> dot
         <span class="highlight">ramo</span> at
         <span class="highlight">mailbox</span> dot
         <span class="highlight">org</span>.
@@ -37,7 +37,7 @@ footer {
 
 .email {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 }
 
 body.light .highlight {
@@ -48,9 +48,13 @@ body.dark .highlight {
   color: var(--highlight-dark);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+  }
+
+  .email {
+    text-align: center;
   }
 }
 </style>

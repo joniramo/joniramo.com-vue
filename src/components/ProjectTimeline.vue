@@ -4,12 +4,17 @@
     <p v-else-if="error" class="error">Failed to load projects.</p>
     <ul v-else class="timeline">
       <li v-for="project in projects" :key="project._id" class="timeline-item">
-        <span class="symbol">{{ project.symbol }}</span>
         <div class="content">
-          <h3>{{ project.title }}</h3>
-          <span class="meta">{{
-            formatRange(project.dateFrom, project.dateTo)
-          }}</span>
+          <h3>
+            <span class="symbol">{{ project.symbol }}</span>
+            {{ project.title }}
+          </h3>
+          <div class="meta">
+            <span class="date">{{
+              formatRange(project.dateFrom, project.dateTo)
+            }}</span>
+            · {{ formatDuration(project.dateFrom, project.dateTo) }}
+          </div>
           <p>{{ project.description }}</p>
         </div>
       </li>
@@ -22,21 +27,11 @@ import { ref, onMounted } from "vue";
 import sanity from "../client";
 import LoadingIcon from "./LoadingIcon.vue";
 import type { Project } from "../types";
+import { formatRange, formatDuration } from "../utils/dates";
 
 const projects = ref<Project[]>([]);
 const loading = ref(true);
 const error = ref(false);
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-  });
-}
-
-function formatRange(from: string, to: string | null): string {
-  return `${formatDate(from)} – ${to ? formatDate(to) : "Present"}`;
-}
 
 onMounted(async () => {
   try {
@@ -61,16 +56,11 @@ onMounted(async () => {
 
 .timeline-item {
   position: relative;
-  padding-left: 2.5rem;
   margin-bottom: 2rem;
 }
 
 .symbol {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.4rem;
-  line-height: 1;
+  padding-right: 0.5rem;
 }
 
 .content h3 {
@@ -83,13 +73,22 @@ onMounted(async () => {
 
 .meta {
   font-size: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 body.light .meta {
-  color: var(--meta-light);
+  color: var(--meta-lighter);
+
+  .date {
+    color: var(--meta-light);
+  }
 }
 
 body.dark .meta {
-  color: var(--meta-dark);
+  color: var(--meta-darker);
+
+  .date {
+    color: var(--meta-dark);
+  }
 }
 </style>

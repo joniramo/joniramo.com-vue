@@ -35,9 +35,9 @@
       <ExperienceTimeline />
       <a
         href="https://www.linkedin.com/in/joniramo/"
-        class="router-link-active back"
-        >view more >></a
-      >
+        class="router-link-active more"
+        >view more on LinkedIn <span v-html="externalIcon"></span
+      ></a>
     </div>
 
     <div class="skills">
@@ -54,7 +54,6 @@
       <AnchorButton anchor="featured-projects">
         <h2 id="featured-projects">Featured projects</h2>
       </AnchorButton>
-      <p>Some of the projects I've worked on.</p>
 
       <br />
 
@@ -69,11 +68,12 @@ import ExperienceTimeline from "../components/ExperienceTimeline.vue";
 import ProjectTimeline from "../components/ProjectTimeline.vue";
 import SkillBarChart from "../components/SkillBarChart.vue";
 import AnchorButton from "../components/AnchorButton.vue";
+import externalIcon from "../assets/external.svg?raw";
 
 const siteUrl = import.meta.env.VITE_SITE_URL;
 
 useHead({
-  title: "CV – Joni Rämö",
+  title: "CV - Joni Rämö",
   meta: [
     {
       name: "description",
@@ -131,5 +131,11 @@ body.dark .highlight {
   height: 300px;
   object-fit: cover;
   filter: grayscale(100%);
+}
+
+.more :deep(svg) {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
 </style>
