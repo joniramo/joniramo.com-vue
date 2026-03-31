@@ -182,6 +182,13 @@ fetchData();
   margin-bottom: 1rem;
 }
 
+.blog-post :deep(h2),
+.blog-post :deep(h3),
+.blog-post :deep(h4),
+.blog-post :deep(h5) {
+  margin-top: 2.5rem;
+}
+
 .back {
   align-self: flex-start;
 }
