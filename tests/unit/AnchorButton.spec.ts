@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import AnchorButton from "../../src/components/AnchorButton.vue";
 
 beforeEach(() => {
@@ -7,9 +7,13 @@ beforeEach(() => {
     value: { origin: "https://example.com", pathname: "/cv" },
     writable: true,
   });
-  Object.assign(navigator, {
+  vi.stubGlobal("navigator", {
     clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
   });
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
 });
 
 describe("AnchorButton", () => {
