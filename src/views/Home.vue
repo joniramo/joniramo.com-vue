@@ -5,17 +5,20 @@
 
       <div class="intro-paragraph">
         <p>
-          I'm a full-stack software engineer. I'm interested in contributing to
-          projects where I can expand my knowledge and express my creativity.
+          I am a full-stack software engineer and software consultant. I want to contribute to
+          projects where I can excel, grow and express my creativity.
           Where the team and stakeholders share a common goal in making a great
           product that brings real value to its users.
 
           <br />
           <br />
 
-          In my free time, you may find me working on my personal software
-          projects, punishing iron at the gym, out on a jog or enjoying the
-          world of video games.
+		  In my work I naturally radiate information through an approriate level of documentation and communication. In every project my goal is to make the team function better by creating an atmosphere of trust and openness through my own example. Without forgetting humor, as the best teams are always having fun! 
+
+          <br />
+          <br />
+
+		  On my free time you may find me on a jog, making music on Ableton or playing video games. (GTA VI recently, what a game!)
         </p>
       </div>
     </div>
