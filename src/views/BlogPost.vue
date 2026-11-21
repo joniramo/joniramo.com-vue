@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { PortableText, PortableTextComponents } from "@portabletext/vue";
 import DOMPurify from "dompurify";
 import hljs from "highlight.js";
@@ -65,7 +65,7 @@ const query = `*[slug.current == $slug] {
 `;
 
 function getImageUrl(source: any) {
-  return imageUrlBuilder(sanity).image(source);
+  return createImageUrlBuilder(sanity).image(source);
 }
 
 interface CodeNode {

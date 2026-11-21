@@ -4,7 +4,7 @@ import tsEslint from "typescript-eslint";
 
 export default tsEslint.config(
   {
-    ignores: ["studio/.sanity/", "**/eslint.config.mjs", "**/*.d.ts"],
+    ignores: ["dist/", "studio/.sanity/", "**/eslint.config.mjs", "**/*.d.ts"],
   },
   eslintJs.configs.recommended,
   tsEslint.configs.recommended,
